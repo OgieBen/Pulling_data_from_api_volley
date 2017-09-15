@@ -47,14 +47,17 @@ public class ApiDevelopersPayLoadResolver {
 //        this.items = items;
 //    }
 //
-
+        /*
+        * Holds all the properties from the body of the response */
 
     String total_counts;
     String incomplete_results;
 
+    /* Holds the all the lists of the developer here in the */
     @SerializedName("items")
     @Expose
     ArrayList<Developer> items ;
+
 
     public String getTotal_counts() {
         return total_counts;
@@ -71,6 +74,8 @@ public class ApiDevelopersPayLoadResolver {
     public void setIncomplete_results(String incomplete_results) {
         this.incomplete_results = incomplete_results;
     }
+
+
 
     public List<Developer> getItems() {
         return items;

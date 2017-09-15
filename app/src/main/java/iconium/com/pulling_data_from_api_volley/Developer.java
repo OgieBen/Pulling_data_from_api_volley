@@ -9,6 +9,17 @@ import com.google.gson.annotations.SerializedName;
 public class Developer implements Parcelable {
 
 
+    /* Every property here represents all the properties from the objects in the json response we get from the
+     * Api server. */
+
+    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+        public Developer createFromParcel(Parcel in) {
+            return new Developer(in);
+        }
+        public Developer[] newArray(int size) {
+            return new Developer[size];
+        }
+    };
     @SerializedName("login")
     @Expose
     private String login;
@@ -63,16 +74,6 @@ public class Developer implements Parcelable {
     @SerializedName("score")
     @Expose
     private Double score;
-
-
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-        public Developer createFromParcel(Parcel in) {
-            return new Developer(in);
-        }
-        public Developer[] newArray(int size) {
-            return new Developer[size];
-        }
-    };
 
 
     public Developer(String _login, String _avatar_url) {
