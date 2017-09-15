@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
 
 
-        //This is where is sent to get the data from the network.
+        //This is where the request is initialized to get the data from the network.
         ApiRequestNegotiator apiRequest = new ApiRequestNegotiator(
                 Request.Method.GET,
                 URL,
